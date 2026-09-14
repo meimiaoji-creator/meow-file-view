@@ -8,7 +8,8 @@ meow-file-view 解决「AI 改完文件，我却要切到 VS Code 才能看它�
 
 零 DSH 源码改动——独立 bundle，经 `dsh 插件 --profile web add` 装进 web profile，与官方插件平级共存。
 
-![文件查看面板](docs/screenshots/file-panel.png)
+<img width="2549" height="1242" alt="image" src="https://github.com/user-attachments/assets/a50ab50c-b0e5-49e1-aa4b-e4eb354e77e8" />
+
 
 ---
 
@@ -64,13 +65,15 @@ png / jpg / jpeg / gif / webp / bmp / ico 直接在面板查看（20MB 上限，
 - 没装 git 也不碍事：探测安静失败，Diff 按钮不出现，其余功能完全正常。
 - 测试报告类产物预留占位提示（未来由测试报告插件接管）。
 
-![回合产物行与 Diff 按钮](docs/screenshots/artifacts-diff.png)
+<img width="1398" height="384" alt="image" src="https://github.com/user-attachments/assets/45bad92b-0eec-499e-8765-9396d9e83fd5" />
+
 
 ### 设置页「Git 差异」节
 
 dsh 设置弹窗新增 meow-file-view 节：`gitExePath`（git 可执行文件路径兜底）与 `repoRoots` 覆盖表（工作区 ≠ 仓库根时逐行指定）。保存即生效，持久化到插件根 `git-config.json`，无需重启。
 
-![设置页 Git 差异节](docs/screenshots/settings-git.png)
+<img width="2549" height="1242" alt="image" src="https://github.com/user-attachments/assets/0b4da273-954d-49bd-9c94-cf088badcb35" />
+
 
 ---
 
