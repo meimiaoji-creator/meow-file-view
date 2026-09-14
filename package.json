@@ -1,0 +1,83 @@
+{
+  "name": "meow-file-view",
+  "version": "0.1.0",
+  "description": "dsh 插件：对话窗文件查看（输入框「文件」按钮 + 右侧滑出面板，目录树 + 预览/源码，md/java/yml 等常见开发文件）",
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "deepseek-harness",
+    "deepseek",
+    "file-viewer",
+    "markdown",
+    "git-diff",
+    "code-preview"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/meimiaoji-creator/meow-file-view#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meimiaoji-creator/meow-file-view.git"
+  },
+  "bugs": {
+    "url": "https://github.com/meimiaoji-creator/meow-file-view/issues"
+  },
+  "author": "meimiaoji-creator",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/index.d.ts",
+    "lib/client.js",
+    "lib/files.js",
+    "lib/files.d.ts",
+    "lib/git.js",
+    "lib/git.d.ts",
+    "lib/schema.js",
+    "lib/schema.d.ts",
+    "lib/shared/turn-artifacts.js",
+    "lib/shared/turn-artifacts.d.ts",
+    "lib/web/api.js",
+    "lib/web/api.d.ts",
+    "lib/web/routes.js",
+    "lib/web/routes.d.ts",
+    "lib/web/static.js",
+    "lib/web/static.d.ts",
+    "cordis.patch.yml",
+    "static",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^0.1.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\""
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}

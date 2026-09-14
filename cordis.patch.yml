@@ -1,0 +1,23 @@
+# meow-file-view bundle layer.
+#
+# 组合层：只插一行 meow-file-view（与 dsh-meow-skill / meow-dsh-task 同款形态）。
+# 插件 apply() 会：
+#   1. 归一化配置（root 覆盖 / maxBytes / exclude，缺省隐藏 node_modules/.git）；
+#   2. 注册 Web 路由（ctx.webServer）：
+#      - exact   /meow-file-view            查看器页面（自包含单页）
+#      - prefix  /meow-file-view/static/*   md-viewer lib（磁盘读，穿越防护）
+#      - prefix  /api/meow-file-view/*      JSON API（tree/content/root/raw/save + git probe/diff/config）
+#   3. browser 半注入 UI：conversation.input.right「文件」按钮 + shell.overlay 右侧面板
+#      + conversation.chat.turnTail 回合产物行（点击直达 / Git Diff）+ settings.section Git 差异设置。
+#   inject 含 'webServer'，强依赖 web profile 形态。
+- insert:
+    - id: meow-file-view
+      name: meow-file-view
+      config: {}
+        # 配置说明：
+        # root:          树根覆盖（相对工作区解析；缺省 = 会话工作区）
+        # maxBytes:      单文本文件读取上限（默认 1048576；超限截断展示 + 禁编辑）
+        # exclude:       目录树隐藏名（默认 ['node_modules', '.git']）
+        # edit:          允许浏览器端编辑并保存 md（默认 true；false 关闭写入口）
+        # maxImageBytes: 单图片读取上限（默认 20971520，超限 413）
+        # 注意：config 显式给 {} 而非空（空会解析成 null，插件 apply 会崩）
